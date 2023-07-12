@@ -1,6 +1,7 @@
+const catchAsync = require('../utils/catchAsync');
 const sandResponse = require('../utils/sandResponse');
 
-module.exports.getUsers = (req, res) => {
+module.exports.getUsers = catchAsync(async (req, res) => {
   sandResponse(res, {
     success: true,
     statusCode: 200,
@@ -10,4 +11,4 @@ module.exports.getUsers = (req, res) => {
       name: 'shakeeb',
     },
   });
-};
+});
